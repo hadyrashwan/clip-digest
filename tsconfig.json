@@ -23,7 +23,8 @@
 
     /* Path aliases */
     "paths": {
-      "~/*": ["./src/*"]
+      "~/*": ["./src/*"],
+      "youtube-transcript-api": ["./src/types/youtube-transcript-api.d.ts"],
     },
 
     "types": ["vitest/globals"]
@@ -33,7 +34,7 @@
     "**/*.ts",
     "**/*.tsx",
     "*.js",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
   ],
   "exclude": ["node_modules"]
 }
