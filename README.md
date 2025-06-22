@@ -1,88 +1,79 @@
-# Prisma + tRPC
+<div align="center">
+  <img src="./public/favicon.ico" alt="ClipDigest Icon" width="64" height="64">
+  <h1>ClipDigest</h1>
+</div>
+
+This is a video summary application that leverages AI to generate concise summaries of YouTube videos.
 
 ## Features
 
-- 🧙‍♂️ E2E typesafety with [tRPC](https://trpc.io)
-- ⚡ Full-stack React with Next.js
-- ⚡ Database with Prisma
-- ⚙️ VSCode extensions
-- 🎨 ESLint + Prettier
-- 💚 CI setup using GitHub Actions:
-  - ✅ E2E testing with [Playwright](https://playwright.dev/)
-  - ✅ Linting
-- 🔐 Validates your env vars on build and start
+- Generate summaries of YouTube videos using AI.
+- User-friendly interface for inputting video URLs.
+- Displays summaries in an easy-to-read format.
+- Provides the video transcript.
+- Allows downloading an audio version with realistic human-like sound.
+- Built with Next.js and tRPC.
+
+## Deployment
+
+The application is deployed and available at: [https://clip-digest.vercel.app/](https://clip-digest.vercel.app/)
+
+### Deploy Your Own
+
+You can deploy your own version of ClipDigest to Vercel with one click:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/hadyrashwan/clip-digest)
 
 ## Setup
 
-```bash
-pnpm create next-app --example https://github.com/trpc/trpc --example-path examples/next-prisma-starter trpc-prisma-starter
-cd trpc-prisma-starter
-pnpm
-pnpm dx
-```
+To set up the project locally, follow these steps:
 
-### Requirements
+1.  **Clone the repository:**
 
-- Node >= 18.0.0
-- Postgres
+    ```bash
+    git clone [repository-url]
+    cd video-summary
+    ```
+
+2.  **Install dependencies:**
+
+    ```bash
+    pnpm install
+    ```
+
+3.  **Set up environment variables:**
+
+    Create a `.env` file in the root directory based on `.env.example` and fill in the necessary values, especially your OpenAI API key.
+
+    ```
+    # .env.example
+    OPENAI_API_KEY="your_openai_api_key_here"
+    ```
+
 
 ## Development
 
 ### Start project
 
 ```bash
-pnpm create next-app --example https://github.com/trpc/trpc --example-path examples/next-prisma-starter trpc-prisma-starter
-cd trpc-prisma-starter
-pnpm
-pnpm dx
+pnpm dev
 ```
 
-### Commands
+This will start the Next.js development server. Open [http://localhost:3000](http://localhost:3000) in your browser to access the application.
 
-```bash
-pnpm build      # runs `prisma generate` + `prisma migrate` + `next build`
-pnpm db-reset   # resets local db
-pnpm dev        # starts next.js
-pnpm dx         # starts postgres db + runs migrations + seeds + starts next.js
-pnpm test-dev   # runs e2e tests on dev
-pnpm test-start # runs e2e + unit tests
-pnpm test-unit  # runs normal Vitest unit tests
-pnpm test-e2e   # runs e2e tests
-```
+### Testing
 
-## Deployment
+To run tests, use the following commands:
 
-### Using [Render](https://render.com/)
-
-The project contains a [`render.yaml`](./render.yaml) [_"Blueprint"_](https://render.com/docs/blueprint-spec) which makes the project easily deployable on [Render](https://render.com/).
-
-Go to [dashboard.render.com/blueprints](https://dashboard.render.com/blueprints) and connect to this Blueprint and see how the app and database automatically gets deployed.
-
-## Files of note
-
-<table>
-  <thead>
-    <tr>
-      <th>Path</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="./prisma/schema.prisma"><code>./prisma/schema.prisma</code></a></td>
-      <td>Prisma schema</td>
-    </tr>
-    <tr>
-      <td><a href="./src/pages/api/trpc/[trpc].ts"><code>./src/pages/api/trpc/[trpc].ts</code></a></td>
-      <td>tRPC response handler</td>
-    </tr>
-    <tr>
-      <td><a href="./src/server/routers"><code>./src/server/routers</code></a></td>
-      <td>Your app's different tRPC-routers</td>
-    </tr>
-  </tbody>
-</table>
-
----
-
-Created by [@alexdotjs](https://twitter.com/alexdotjs).
+-   **Unit Tests:**
+    ```bash
+    pnpm test-unit
+    ```
+-   **End-to-End (E2E) Tests:**
+    ```bash
+    pnpm test-e2e
+    ```
+-   **Run all tests (E2E + Unit):**
+    ```bash
+    pnpm test-start
+    ```

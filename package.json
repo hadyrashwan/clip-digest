@@ -10,17 +10,15 @@
     "dx:prisma-studio": "pnpm prisma-studio",
     "dx": "run-p dx:* --print-label",
     "dev": "next dev",
-    "prebuild": "run-s generate migrate",
     "build": "next build",
     "start": "next start",
     "lint": "eslint --cache src",
     "lint-fix": "pnpm lint --fix",
     "migrate-dev": "prisma migrate dev",
     "migrate": "prisma migrate deploy",
-    "test-unit": "vitest",
+    "test-unit": "vitest run",
     "test-e2e": "playwright test",
-    "test-start": "run-s test-unit test-e2e",
-    "postinstall": "pnpm generate"
+    "test-start": "run-s test-unit test-e2e"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
