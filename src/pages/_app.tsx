@@ -21,7 +21,11 @@ const MyApp = (({ Component, pageProps }: AppPropsWithLayout) => {
   const getLayout =
     Component.getLayout ?? ((page) => <DefaultLayout>{page}</DefaultLayout>);
 
-  return getLayout(<Component {...pageProps} />);
+  return (
+    <>
+      {getLayout(<Component {...pageProps} />)}
+    </>
+  );
 }) as AppType;
 
 export default trpc.withTRPC(MyApp);
