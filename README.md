@@ -8,10 +8,8 @@ This is a video summary application that leverages AI to generate concise summar
 ## Features
 
 - Generate summaries of YouTube videos using AI.
-- User-friendly interface for inputting video URLs.
-- Displays summaries in an easy-to-read format.
+- Allows downloading the summary with realistic human-like sound.
 - Provides the video transcript.
-- Allows downloading an audio version with realistic human-like sound.
 - Built with Next.js and tRPC.
 
 ## Deployment
@@ -77,3 +75,13 @@ To run tests, use the following commands:
     ```bash
     pnpm test-start
     ```
+
+## TODO
+
+- Refactor `src/pages/index.tsx` into smaller components and simplify state management.
+- Update the UI to be mobile-friendly.
+- Add Progressive Web App (PWA) support and Web Share API integration for Android.
+- Integrate Model Context Protocol (MCP) for broader AI tool compatibility.
+- Expose core functions as chatbot integrations for Slack, Discord, Telegram, Messenger, and Instagram.
+- Implement support for transcribing any video using `yt-dlp` and a transcription service.
+- Extend support for more AI models beyond OpenAI.
