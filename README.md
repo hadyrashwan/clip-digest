@@ -4,6 +4,7 @@
 </div>
 
 This is a video summary application that leverages AI to generate concise summaries of YouTube videos.
+> The transcribe dependency is broken. We plan to change it in the future."
 
 ## Features
 
